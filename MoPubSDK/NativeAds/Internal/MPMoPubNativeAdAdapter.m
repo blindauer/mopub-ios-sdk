@@ -80,7 +80,13 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
             valid = NO;
         }
 
-        _defaultActionURL = [NSURL URLWithString:[properties objectForKey:kDefaultActionURLKey]];
+        // TextNow: Migrated this fix in from MoPub 5.13.0 release to fix a P1 crash bug.
+        // Validate that the clickthrough URL is a string before attempting to parse into a URL
+        id clickthroughUrl = [properties objectForKey:kDefaultActionURLKey];
+        if ([clickthroughUrl isKindOfClass:[NSString class]]) {
+            NSString *clickthroughUrlString = (NSString *)clickthroughUrl;
+            _defaultActionURL = [NSURL URLWithString:clickthroughUrlString];
+        }
 
         // Grab the config, figure out requiredSecondsForImpression and requiredViewVisibilityPercentage,
         // and set up the timer.
