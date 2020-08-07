@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
   spec.name             = 'mopub-ios-sdk'
   spec.module_name      = 'MoPub'
-  spec.version          = '5.9.0'
+  spec.version          = '5.9.1'
   spec.license          = { :type => 'New BSD', :file => 'LICENSE' }
-  spec.homepage         = 'https://github.com/mopub/mopub-ios-sdk'
+  spec.homepage         = 'https://github.com/blindauer/mopub-ios-sdk'
   spec.authors          = { 'MoPub' => 'support@mopub.com' }
   spec.summary          = 'The Official MoPub Client SDK allows developers to easily monetize their apps by showing banner, interstitial, and native ads.'
   spec.description      = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
                             To learn more or sign up for an account, go to http://www.mopub.com. \n
                           DESC
   spec.social_media_url = 'http://twitter.com/mopub'
-  spec.source           = { :git => 'https://github.com/mopub/mopub-ios-sdk.git', :tag => '5.9.0' }
+  spec.source           = { :git => 'https://github.com/blindauer/mopub-ios-sdk.git', :tag => '5.9.1' }
   spec.requires_arc     = true
   spec.ios.deployment_target = '9.0'
   spec.frameworks       = [
